@@ -1,4 +1,4 @@
-package com.servlets;
+package com.Servlets;
 
 import java.io.*;
 import jakarta.servlet.http.HttpServlet;

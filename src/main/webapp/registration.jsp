@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<title>Sign Up Form by Colorlib</title>
+<title>Sign Up Page</title>
 
 <!-- Font Icon -->
 <link rel="stylesheet"
@@ -40,7 +40,7 @@
 									type="password" name="pass" id="pass" placeholder="Password" required/>
 							</div>
 							<div class="form-group">
-								<label for="re-pass"><i class="zmdi zmdi-lock-outline"></i></label>
+								<label for="re_pass"><i class="zmdi zmdi-lock-outline"></i></label>
 								<input type="password" name="re_pass" id="re_pass"
 									placeholder="Repeat your password" required/>
 							</div>

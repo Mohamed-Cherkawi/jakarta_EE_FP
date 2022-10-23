@@ -1,4 +1,4 @@
-package com.servlets;
+package com.Servlets;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
