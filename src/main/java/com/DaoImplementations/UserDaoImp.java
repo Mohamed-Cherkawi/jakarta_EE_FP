@@ -1,24 +1,22 @@
-package com.Dao;
+package com.DaoImplementations;
 
-import com.DbConnection;
+import com.DaoInterface.UserDaoInter;
+import com.helpers.UserQueries;
+import com.util.DbConnection;
 import com.Entity.User;
+import org.jetbrains.annotations.NotNull;
 
 import java.sql.*;
 import java.util.ArrayList;
 
-public class UserDao {
+public class UserDaoImp implements UserDaoInter {
     private Connection connection = DbConnection.getConnection();
-    private static final String INSERT_USERS = "INSERT INTO users( user_name , password , user_email , user_phone ) VALUES ( ?,?,?,? ) ;";
-    public static final String SELECT_USER_BY_ID = "SELECT user_name , password , user_email , user_phone FROM users WHERE id = ? ;";
-    private static final String SELECT_ALL_USERS = "SELECT * FROM users ;";
-    public static final String UPDATE_USER_BY_ID = "UPDATE users SET user_name = ? , password = ? , user_email = ? , user_phone = ? WHERE id = ?";
-    public static final String DELETE_USER_BY_ID = "DELETE FROM USERS WHERE id = ? ;";
 
     // Insert A User
-    public boolean insertUser(User user) throws SQLException {
+    public boolean insertUser(@NotNull User user) throws SQLException {
         boolean isInserted = false;
         try {
-            PreparedStatement preparedStatement = this.connection.prepareStatement(INSERT_USERS);
+            PreparedStatement preparedStatement = this.connection.prepareStatement(UserQueries.INSERT_USERS);
             preparedStatement.setString(1 , user.getName());
             preparedStatement.setString(2 , user.getPassword());
             preparedStatement.setString(3 , user.getEmail());
@@ -33,7 +31,7 @@ public class UserDao {
     public User selectUSer(int id){
         User user = null;
         try{
-            PreparedStatement preparedStatement = this.connection.prepareStatement(SELECT_USER_BY_ID);
+            PreparedStatement preparedStatement = this.connection.prepareStatement(UserQueries.SELECT_USER_BY_ID);
             preparedStatement.setInt(1 , id);
             ResultSet rs = preparedStatement.executeQuery();
             String name = rs.getString("user_name");
@@ -51,7 +49,7 @@ public class UserDao {
         ArrayList<User> users = new ArrayList<>();
         try{
             Statement statement = this.connection.createStatement();
-            ResultSet rs = statement.executeQuery(SELECT_ALL_USERS);
+            ResultSet rs = statement.executeQuery(UserQueries.SELECT_ALL_USERS);
             while (rs.next()) {
                 int id = rs.getInt("id");
                 String name = rs.getString("user_name");
@@ -66,10 +64,10 @@ public class UserDao {
         return users;
     }
     // Update a user by id
-    public boolean updateUserById(User user) throws SQLException{
+    public boolean updateUserById(@NotNull User user) throws SQLException{
         boolean isUpdated = false;
         try{
-            PreparedStatement preparedStatement = this.connection.prepareStatement(UPDATE_USER_BY_ID);
+            PreparedStatement preparedStatement = this.connection.prepareStatement(UserQueries.UPDATE_USER_BY_ID);
             preparedStatement.setString(1 , user.getName());
             preparedStatement.setString(2 , user.getPassword());
             preparedStatement.setString(3 , user.getEmail());
@@ -85,7 +83,7 @@ public class UserDao {
     public boolean deleteUserById(int id) throws SQLException{
         boolean isDeleted = false;
         try{
-            PreparedStatement preparedStatement = this.connection.prepareStatement(DELETE_USER_BY_ID);
+            PreparedStatement preparedStatement = this.connection.prepareStatement(UserQueries.DELETE_USER_BY_ID);
             preparedStatement.setInt(1 , id);
             isDeleted = preparedStatement.executeUpdate() > 0;
         }catch (SQLException e){

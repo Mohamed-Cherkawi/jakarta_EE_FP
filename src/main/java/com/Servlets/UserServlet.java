@@ -1,6 +1,6 @@
 package com.Servlets;
 
-import com.Dao.UserDao;
+import com.DaoImplementations.UserDaoImp;
 import com.Entity.User;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
@@ -12,11 +12,11 @@ import java.sql.SQLException;
 @WebServlet(name = "UserServlet", value = "/UserServ")
 public class UserServlet extends HttpServlet {
 
-    private UserDao userDao;
+    private UserDaoImp userDaoImp;
     // The init method is called only once. It is called only when the servlet is created, and not called for any user requests afterwards. So, it is used for one-time initializations, just as with the init method of applets
     @Override
     public void init() throws ServletException {
-        userDao = new UserDao();
+        userDaoImp = new UserDaoImp();
     }
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -49,7 +49,7 @@ public class UserServlet extends HttpServlet {
         String password = request.getParameter("password");
         String email = request.getParameter("email");
         String phone = request.getParameter("phone");
-        isInserted = this.userDao.insertUser(new User(name, password, email, phone));
+        isInserted = this.userDaoImp.insertUser(new User(name, password, email, phone));
         if( isInserted ) message = "Inserted Successfuly";
         else message = "Not Inserted";
         response.sendRedirect("list?isInserted=" + message);

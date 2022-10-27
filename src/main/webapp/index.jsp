@@ -7,25 +7,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-<meta name="description" content="" />
-<meta name="author" content="" />
-<title>Home Page</title>
-<!-- Favicon-->
-<link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-<!-- Font Awesome icons (free version)-->
-<script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"
-	crossorigin="anonymous"></script>
-<!-- Google fonts-->
-<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700"
-	rel="stylesheet" type="text/css" />
-<link
-	href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic"
-	rel="stylesheet" type="text/css" />
-<!-- Core theme CSS (includes Bootstrap)-->
-<link href="css/index-styles.css" rel="stylesheet" />
+	<meta http-equiv='cache-control' content='no-cache'>
+	<meta http-equiv='expires' content='0'>
+	<meta http-equiv='pragma' content='no-cache'>
+	<meta charset="utf-8" />
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+	<meta name="description" content="" />
+	<meta name="author" content="" />
+	<title>Home Page</title>
+	<!-- Favicon-->
+	<link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+	<!-- Font Awesome icons (free version)-->
+	<script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"
+		crossorigin="anonymous"></script>
+	<!-- Google fonts-->
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700"
+		rel="stylesheet" type="text/css" />
+	<link
+		href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic"
+		rel="stylesheet" type="text/css" />
+	<!-- Core theme CSS (includes Bootstrap)-->
+	<link href="css/index-styles.css" rel="stylesheet" />
 </head>
 <body id="page-top">
 	<!-- Navigation-->
@@ -50,8 +53,8 @@
 					<li class="nav-item mx-0 mx-lg-1"><a
 						class="nav-link py-3 px-0 px-lg-3 rounded" href="#contact">Contact</a></li>
 					<li class="nav-item mx-0 mx-lg-1"><a
-						class="nav-link py-3 px-0 px-lg-3 rounded" href="">Logout</a></li>
-					
+						class="nav-link py-3 px-0 px-lg-3 rounded" href="Logout">Logout</a></li>
+				 	<span><%= session.getAttribute("name") %></span>
 				</ul>
 			</div>
 		</div>
@@ -380,7 +383,7 @@
 								</div>
 								<!-- Portfolio Modal - Image-->
 								<img class="img-fluid rounded mb-5"
-									src="assets/img/portfolio/cabin.png" alt="..." />
+									 src="assets/img/portfolio/cabin.png" alt="..." />
 								<!-- Portfolio Modal - Text-->
 								<p class="mb-4">Lorem ipsum dolor sit amet, consectetur
 									adipisicing elit. Mollitia neque assumenda ipsam nihil,
@@ -425,7 +428,7 @@
 								</div>
 								<!-- Portfolio Modal - Image-->
 								<img class="img-fluid rounded mb-5"
-									src="assets/img/portfolio/cake.png" alt="..." />
+									 src="assets/img/portfolio/cake.png" alt="..." />
 								<!-- Portfolio Modal - Text-->
 								<p class="mb-4">Lorem ipsum dolor sit amet, consectetur
 									adipisicing elit. Mollitia neque assumenda ipsam nihil,
@@ -470,7 +473,7 @@
 								</div>
 								<!-- Portfolio Modal - Image-->
 								<img class="img-fluid rounded mb-5"
-									src="assets/img/portfolio/circus.png" alt="..." />
+									 src="assets/img/portfolio/circus.png" alt="..." />
 								<!-- Portfolio Modal - Text-->
 								<p class="mb-4">Lorem ipsum dolor sit amet, consectetur
 									adipisicing elit. Mollitia neque assumenda ipsam nihil,
@@ -514,7 +517,7 @@
 								</div>
 								<!-- Portfolio Modal - Image-->
 								<img class="img-fluid rounded mb-5"
-									src="assets/img/portfolio/game.png" alt="..." />
+									 src="assets/img/portfolio/game.png" alt="..." />
 								<!-- Portfolio Modal - Text-->
 								<p class="mb-4">Lorem ipsum dolor sit amet, consectetur
 									adipisicing elit. Mollitia neque assumenda ipsam nihil,
@@ -559,7 +562,7 @@
 								</div>
 								<!-- Portfolio Modal - Image-->
 								<img class="img-fluid rounded mb-5"
-									src="assets/img/portfolio/safe.png" alt="..." />
+									 src="assets/img/portfolio/safe.png" alt="..." />
 								<!-- Portfolio Modal - Text-->
 								<p class="mb-4">Lorem ipsum dolor sit amet, consectetur
 									adipisicing elit. Mollitia neque assumenda ipsam nihil,
@@ -603,7 +606,7 @@
 								</div>
 								<!-- Portfolio Modal - Image-->
 								<img class="img-fluid rounded mb-5"
-									src="assets/img/portfolio/submarine.png" alt="..." />
+									 src="assets/img/portfolio/submarine.png" alt="..." />
 								<!-- Portfolio Modal - Text-->
 								<p class="mb-4">Lorem ipsum dolor sit amet, consectetur
 									adipisicing elit. Mollitia neque assumenda ipsam nihil,

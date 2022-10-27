@@ -5,18 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <title>Sign In Page</title>
-
-<!-- Font Icon -->
-<link rel="stylesheet"
+	<!-- Font Icon -->
+	<link rel="stylesheet"
 	href="fonts/material-icon/css/material-design-iconic-font.min.css">
 
-<!-- Main css -->
-<link rel="stylesheet" href="css/style.css">
+	<!-- Main css -->
+	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
+	<input type="hidden" id="status" value="<%= request.getAttribute("status")%>">
 	<div class="main">
-
 		<!-- Sing in  Form -->
 		<section class="sign-in">
 			<div class="container">
@@ -28,21 +26,20 @@
 						<a href="registration.jsp" class="signup-image-link">Create an
 							account</a>
 					</div>
-
 					<div class="signin-form">
 						<h2 class="form-title">Sign in</h2>
-						<form method="" action="" class="register-form"
+						<form method="POST"  action="Login" class="register-form"
 							id="login-form">
 							<div class="form-group">
-								<label for="username"><i
+								<label for="email"><i
 									class="zmdi zmdi-account material-icons-name"></i></label> <input
-									type="text" name="username" id="username"
-									placeholder="Your Name" />
+									type="email" name="email" id="email"
+									placeholder="Your email" required />
 							</div>
 							<div class="form-group">
 								<label for="password"><i class="zmdi zmdi-lock"></i></label> <input
 									type="password" name="password" id="password"
-									placeholder="Password" />
+									placeholder="Password" required />
 							</div>
 							<div class="form-group">
 								<input type="checkbox" name="remember-me" id="remember-me"
@@ -76,6 +73,17 @@
 	<!-- JS -->
 	<script src="vendor/jquery/jquery.min.js"></script>
 	<script src="js/main.js"></script>
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+	<link rel="stylesheet" href="alert/dist/sweetalert.css">
+	<script>
+		let status = document.getElementById("status").value ;
+		if(status === "failed"){
+			swal("Oopps","It Looks Like You Entered A Wrong Data" , "error");
+		}else if ( status == "invEmail" ){
+			swal("Oopps","It Looks Like You Entered An Empty Email" , "error");
+		}else if ( status == "invPass" ) {
+			swal("Oopps","It Looks Like You Entered An Empty Password" , "error");
+		}
+	</script>
 </body>
-<!-- This templates was made by Colorlib (https://colorlib.com) -->
 </html>
